@@ -1,0 +1,25 @@
+header {
+	height: 80px;
+	width: 100%;
+	background: #519872;
+	padding: 25px;
+}
+
+header > div {
+	max-width: 1000px;
+	margin: auto;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	height: 100%;
+	margin-right: 15px;
+}
+
+header > div > h1 {
+	font-family: sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+}

@@ -1,0 +1,45 @@
+.wizard {
+	max-width: 350px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: calc(100vh - 80px);
+	padding: 20px;
+}
+
+.wizard > input,
+.submit {
+	height: 25px;
+	text-align: center;
+	margin: 10px 0;
+	background: transparent;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 2px solid #666;
+	font-size: 20px;
+	outline: none;
+	color: #333;
+}
+
+.submit {
+	border: none;
+	cursor: pointer;
+	color: #777;
+}
+
+.submit:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+.cancel {
+	position: absolute;
+	top: 20px;
+	right: -100px;
+	background: lightgreen;
+	text-decoration: none;
+	padding: 10px;
+	font-family: sans-serif;
+}

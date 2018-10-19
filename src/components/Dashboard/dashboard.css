@@ -1,0 +1,18 @@
+.dashboard {
+	min-height: calc(100vh - 80px);
+	width: 800px;
+	margin: auto;
+	background: #e5f4ec;
+	display: grid;
+	position: relative;
+}
+
+.add {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	text-decoration: none;
+	background: lightgreen;
+	padding: 10px;
+	font-family: sans-serif;
+}
