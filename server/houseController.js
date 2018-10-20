@@ -1,5 +1,5 @@
 module.exports = {
-	create: (req, res, next) => {
+	create: (req, res) => {
 		req.app
 			.get("db")
 			.create_house({ ...req.body })
@@ -21,6 +21,17 @@ module.exports = {
 				res.sendStatus(500);
 			});
 	},
-	update: (req, res, next) => {},
-	delete: (req, res, next) => {}
+	update: (req, res) => {},
+	delete: (req, res) => {
+		req.app
+			.get("db")
+			.delete_house({ ...req.params })
+			.then(response => {
+				res.sendStatus(200);
+			})
+			.catch(error => {
+				console.log("Error DELETE endpoint", error);
+				res.sendStatus(500);
+			});
+	}
 };

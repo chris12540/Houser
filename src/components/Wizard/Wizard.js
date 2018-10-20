@@ -1,98 +1,26 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import api from "../../api";
+import React from "react";
+import { Route, Link } from "react-router-dom";
+import Step1 from "./Step1/Step1";
+import Step2 from "./Step2/Step2";
+import Step3 from "./Step3/Step3";
+import { connect } from "react-redux";
+import { reset } from "../../🦆🦆🦆/reducer";
 
 import "./wizard.css";
 
-class Wizard extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: "",
-			address: "",
-			city: "",
-			state: "",
-			zip: ""
-		};
-	}
+function Wizard(props) {
+	const { dispatch } = props;
+	return (
+		<div className="wizard">
+			<Route path="/wizard/step1" component={Step1} />
+			<Route path="/wizard/step2" component={Step2} />
+			<Route path="/wizard/step3" component={Step3} />
 
-	update = (prop, e) => {
-		this.setState({
-			[prop]: e.target.value
-		});
-	};
-
-	addProperty = () => {
-		axios.post(api, this.state);
-		this.setState({
-			name: "",
-			address: "",
-			city: "",
-			state: "",
-			zip: ""
-		});
-		console.log("whyyyyyy");
-	};
-
-	render() {
-		const { name, address, city, state, zip } = this.state;
-		return (
-			<div className="wizard">
-				<input
-					className="input"
-					onChange={e => {
-						this.update("name", e);
-					}}
-					placeholder="Property Name"
-					type="text"
-					value={name}
-				/>
-				<input
-					className="input"
-					onChange={e => {
-						this.update("address", e);
-					}}
-					placeholder="Address"
-					type="text"
-					value={address}
-				/>
-				<input
-					className="input"
-					onChange={e => {
-						this.update("city", e);
-					}}
-					placeholder="City"
-					type="text"
-					value={city}
-				/>
-				<input
-					className="input"
-					onChange={e => {
-						this.update("state", e);
-					}}
-					placeholder="State"
-					type="text"
-					value={state}
-				/>
-				<input
-					className="input"
-					onChange={e => {
-						this.update("zip", e);
-					}}
-					placeholder="ZIP"
-					type="text"
-					value={zip}
-				/>
-				<button className="submit" onClick={this.addProperty}>
-					Submit
-				</button>
-				<Link to="/" className="cancel">
-					Cancel
-				</Link>
-			</div>
-		);
-	}
+			<Link to="/" className="cancel" onClick={dispatch(reset)}>
+				Cancel
+			</Link>
+		</div>
+	);
 }
 
-export default Wizard;
+export default connect(null)(Wizard);

@@ -16,7 +16,7 @@ massive(process.env.CONNECTION_STRING).then(database => {
 app.get(api, houseController.read);
 app.post(api, houseController.create);
 // app.patch(api, houseController.update);
-// app.delete(api, houseController.delete);
+app.delete(`${api}/:id`, houseController.delete);
 
 const PORT = process.env.SERVER_PORT || 25565;
 app.listen(PORT, () => {

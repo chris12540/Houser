@@ -8,7 +8,7 @@
 	padding: 20px;
 }
 
-.wizard > input,
+.wizard input,
 .submit {
 	height: 25px;
 	text-align: center;
@@ -42,4 +42,24 @@
 	text-decoration: none;
 	padding: 10px;
 	font-family: sans-serif;
+	color: black;
+}
+
+.next,
+.previous {
+	position: absolute;
+	color: black;
+	text-decoration: none;
+	font-family: sans-serif;
+	background: lightgreen;
+	padding: 10px;
+	bottom: 50px;
+}
+
+.previous {
+	left: -200px;
+}
+
+.next {
+	right: -200px;
 }

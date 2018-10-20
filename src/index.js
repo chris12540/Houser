@@ -3,12 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { HashRouter as H } from "react-router-dom";
+import { BrowserRouter as H } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./🦆🦆🦆/store";
 
 ReactDOM.render(
-	<H>
-		<App />
-	</H>,
+	<Provider store={store}>
+		<H>
+			<App />
+		</H>
+	</Provider>,
 	document.getElementById("root")
 );
 

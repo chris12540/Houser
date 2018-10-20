@@ -1,0 +1,41 @@
+.house {
+	height: 200px;
+	width: 550px;
+	background: lightgray;
+	margin-bottom: 20px;
+	padding: 10px;
+	position: relative;
+	display: flex;
+}
+
+.house > h1 {
+	font-family: sans-serif;
+	margin: 10px;
+}
+
+.house-img {
+	height: 100%;
+	background: purple;
+	display: inline-block;
+}
+
+.house-description {
+}
+
+.house-name {
+}
+.house-address {
+}
+.house-city {
+}
+.house-state {
+}
+.house-zip {
+}
+
+.delete-house {
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}

@@ -3,8 +3,8 @@
 	width: 800px;
 	margin: auto;
 	background: #e5f4ec;
-	display: grid;
 	position: relative;
+	padding: 20px;
 }
 
 .add {
